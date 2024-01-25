@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login_style.css"/>
+    <title>Forty Days</title>
+</head>
+<body>
+    <div class="container">
+        <h2>LOG IN</h2>
+        <form class="login_form" id="login_form" action="/" method="POST">
+            
+            <% if (messages.error) { %>
+                <div class="alert"> <strong><%= messages.error %> </strong></div>
+            <% } %>
+            <input class="field"
+                id="username"
+                name="username"
+                type="text"
+                required
+                placeholder="Username"/><br>
+
+            <input class="field"
+                id="password"
+                name="password"
+                type="password"
+                required
+                placeholder="Password"/><br>
+
+            <input 
+                class="submit-login"
+                type="submit"
+                value="Log In"/>
+        </form>
+        <div>
+            <a class="switch-signup" href='/signup'>Register?</a>
+    
+        </div>
+
+
+    </div>
+    <!--<script src="/js/login.js"></script> -->
+</body>
+</html>  

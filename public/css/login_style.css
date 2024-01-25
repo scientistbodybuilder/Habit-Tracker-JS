@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgb(232, 216, 216);
+  }
+  .container{
+    padding: 20px;
+    background-color:rgb(245, 228, 228);
+    border-radius: 15px;
+    min-width: 300px;
+    min-height: 350px;
+    align-content: center;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: 60px;
+  }
+  .field{
+    padding:5px;
+    margin: 9px;
+    font-size: 17px;
+    border-radius: 8px;
+    border-width: 1px;
+  }
+  .submit-login{
+    background-color: rgb(200, 174, 174);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 200ms;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 20px;
+    border-radius: 8px;
+    border-width: 1px;
+    margin-bottom: 10px;
+  }
+  .submit-login:hover{
+    opacity: 0.8;
+  }
+  .switch-signup{
+    margin: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    margin-top: 15px;
+    padding-top: 10px;
+  }
+  .switch-signup:hover{
+    color:brown;
+  }
+
+  .alert {
+    border-color: red;
+    border-radius: 8px;
+    color: red;
+    background-color: rgb(238, 189, 197);
+    padding: 5px;
+  }

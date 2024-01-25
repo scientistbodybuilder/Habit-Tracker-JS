@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  body {
+    margin: 0;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgb(232, 216, 216);
+  }
+  
+  main {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .container {
+    padding: 20px;
+    background-color:rgb(245, 228, 228);
+    border-radius: 15px;
+    margin:6px;
+    width:40%;
+    min-width: 250px;
+  }
+
+  .input {
+    font-size: 18px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  .submit-habit{
+    background-color: rgb(200, 174, 174);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    font-size: 20px;
+    transition: 200ms;
+  }
+  .submit-habit:hover{
+    opacity: 0.8;
+  }
+  .habits {
+    text-align: left;
+    list-style: none;
+  }
+  
+  .habits li {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+  }
+  
+  .habits label {
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .habits input {
+    margin-right: 12px;
+  }
+  
+  .habits input {
+    display: none;
+  }
+  
+  .habits input + label:before {
+    content: "+";
+    margin-right: 12px;
+  }
+  
+  .habits input + label span {
+    font-weight: 200;
+    font-size: 0.75rem;
+  }
+  
+  .habits input:checked + label {
+    text-decoration: line-through;
+    color: lightgrey;
+  }
+  
+  .habits button {
+    padding-left: 30px;
+    background: none;
+    margin: 5px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  .add-habit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+  }
+  
+  .add-habit input {
+    padding: 10px;
+    margin: 5px;
+    outline: 0;
+    border: 0;
+    border-radius: 100px;
+  }
+  
+  .add-habit select {
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .frequency {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 6px;
+  }
+
+  #timeframe {
+    padding: 4px;
+  }
+
+  .delete {
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .edit{
+    cursor: pointer;
+    font-size: 16px;
+  }
+  /*============================= HEADER ======================================*/
+   a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 25px 10%;
+    background-color: rgb(151, 121, 121);;
+  }
+  .nav_title {
+    color: #edf0f1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    margin-right: auto;
+  }
+  .nav__links {
+    list-style: none;
+  }
+  .nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+  }
+  .nav__links li a {
+    transition: all 0.3s ease 0s;
+  }
+  .nav__links li a:hover {
+    color: #ffffff;
+  }
+
+  .nav_logout {
+    margin-left: 20px;
+  }
+
+  .logoutButton{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #edf0f1;
+    text-decoration: none;
+    padding: 9px 25px;
+    background-color: rgb(61, 39, 39);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+  }
+  .logoutButton:hover {
+    opacity: 0.8;
+  }
+
+  .check {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .l {
+    font-size: 1.0rem;
+  }
+
+  .alert {
+    border-color: red;
+    border-radius: 8px;
+    color: red;
+    background-color: rgb(238, 189, 197);
+    padding: 5px;
+  }
+
+  /*================================== MODAL ======================================*/
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 3px solid rgb(0, 0, 0);
+    z-index: 10;
+    width: 400px;
+    max-width: 50%;
+    height: 350px;
+    background-color: rgb(247, 219, 212);
+    transition: 200ms ease-in-out;
+
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.55rem;
+    margin-left: 99px;
+    margin-top: 15px;
+    color: rgb(68, 65, 65);
+
+}
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.95rem;
+    font-weight: bold;
+    margin-left: 295px;
+    margin-top: 10px;
+}
+
+.modal-body{
+    padding: 10px 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-content: center;
+}
+.ehabit {
+    margin-bottom: 10px;
+}
+
+.ereps{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.efrequency{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ebutton{
+    display: flex;
+    border-radius: 15px;
+    background-color: rgb(200, 174, 174);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.99rem;
+    height: 37px;
+    width: 110px;
+    text-align:justify;
+    padding-left: 20px;
+    margin: auto;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.ebutton:hover {
+  opacity: 0.8;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+.overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+.warning{
+  color: red;
+  text-align: center;
+  font-size: 12px;;
+}
+
+.duplicate{
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "habit_server",
+  "version": "1.0.0",
+  "description": "My first Server with Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server.js"
+  },
+  "author": "Ousman",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.6.5",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.4"
+  }
+}

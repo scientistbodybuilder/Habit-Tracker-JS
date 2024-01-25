@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style1.css" />
+    <title>Forty Days</title>
+  </head>
+  <body>
+    <header>
+      <!--image-->
+      <label class="nav_title">FORTY DAYS</label>
+      <nav>
+          <ul class="nav__links">
+              <li class="link"><a href="/dashboard">Dashboard </a></li>
+              <li class="link"><a href="/account">Account </a></li>
+              <li class="link"><a href="/contact">Contact </a></li>
+          </ul>
+      </nav>
+      <a class="nav_logout" href="/logout"><button class="logoutButton">Logout</button></a>
+  </header>
+  <main>
+    <div class="container">
+      <h2>FORTY DAYS</h2>
+      <form class="add-habit" method="POST" action="/dashboard-add">
+        <% if (messages.error) { %>
+          <div class="alert"> <strong><%= messages.error %> </strong></div>
+      <% } %>
+        <input class="input"
+          class="habit"
+          type="text"
+          name="habit"
+          placeholder="Enter Habit Name"
+          required
+        />
+        <input class="input"
+          type="number"
+          name="reps"
+          placeholder="# of Repetitions"
+          min="1"
+          required
+        />
+        <div class="frequency">
+          <label for="timeframe">Frequency: </label>
+          <select name="timeframe" id="timeframe" class="input">
+            <option value="Daily" selected="selected">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Yearly">Yearly</option>
+          </select>
+        </div>
+        <input class="submit-habit" type="submit" value="+ Add Habit" />
+      </form>
+      <ul class="habits">
+        <% if(context.habits) {%>
+          <% context.habits.forEach(function(habit, i) { %>
+            <% if (habit.completed == true) { %>
+                <li><span class="check" id="habit<%= habit.habitId %>" data-habitid = "<%= habit.habitId %>">+  </span>
+                <label style="text-decoration: line-through;" class="l" for="habit<%= i %>"><span><%= habit.reps %>/<%= habit.totalCounts %> <%= habit.timeframe %></span>          <%= habit.text %></label>
+                <button class="delete" data-index="<%= i %>" data-habitid = "<%= habit.habitId %>" id="delete<%= i %>">Delete</button>
+                <button class="edit" data-index="<%=i%>" data-habitid="<%=habit.habitId%>">Edit</button>
+                </li>
+            <% } else { %>
+                <li><span class="check" id="habit<%= habit.habitId %>" data-habitid = "<%= habit.habitId %>">+  </span>
+                <label class="l" for="habit<%= i %>"><span><%= habit.reps %>/<%= habit.totalCounts %> <%= habit.timeframe %></span>          <%= habit.text %></label>
+                <button class="delete" data-index="<%= i %>" data-habitid = "<%= habit.habitId %>" id="delete<%= i %>">Delete</button>
+                <button class="edit" data-index="<%=i%>" data-habitid="<%=habit.habitId%>">Edit</button>
+                </li>
+            <% } %>
+          <% }); %>
+        <% } %>
+      </ul> 
+    </div>
+  </main>
+  <!-- <input type="checkbox" data-habitID="%= habit.habitID%>" data-index="%= i %>" id="habit%= i %>" %= habit.completed ? "checked" : "" %> -->
+<!--------------------------------------------------------->
+<div class="modal" id="modal">
+  <button data-close-button class="close-button">&times;</button><br>
+  <form class="edit-habit">
+    <div class="modal-header">
+      <div class="title">EDIT HABIT</div><br>
+    </div>
+  <div class="modal-body">
+    <p class="warning">Edits made will reset the current rep count for specified habit</p>
+    <label >New Reps:</lable>
+      <input 
+        class="ereps" 
+        type="number"
+        min=1
+        id="ereps"
+        required
+        >
+      <div class="efrequency">
+        <label for="etimeframe">Frequency: </label>
+          <select name="etimeframe" id="etimeframe">
+            <option value="Daily" selected="selected">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Yearly">Yearly</option>
+          </select>
+      </div>
+      <input class="ebutton" id="ebut" type="submit" value="Submit"/>
+  </div>
+</form>
+</div>
+<div class="overlay" id="overlay"></div>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
