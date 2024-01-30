@@ -9,6 +9,7 @@ const {db} = require('../config/db');
 const bcrypt = require('bcrypt');
 
 //I need to provide a mock database for the testing. Pass the mock db into the signupController
+//This testing is still in progress
 
 const request1 = {
     body: {

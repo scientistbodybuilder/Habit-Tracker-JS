@@ -7,6 +7,8 @@ const {db} = require('../config/db');
 const Auth = require('../public/js/login');
 const {loginController} = require('../controllers/login-controller');
 
+//This testing is still in progress
+
 const request1 = {
     body: {
         username: 'user1',
